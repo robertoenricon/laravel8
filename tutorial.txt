@@ -1,0 +1,8 @@
+
+"==================ROTAS=================";
+
+- {idade?} = Parametro na URL opcional"
+
+Route::get('pessoas/{nome}/{idade?}', function ($nome, $idade = false) { 
+  return "Nome: $nome, Idade: $idade" ; 
+});
