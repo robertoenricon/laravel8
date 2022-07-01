@@ -1,8 +1,46 @@
-
-"==================ROTAS=================";
+==================ROTAS=================
 
 - {idade?} = Parametro na URL opcional"
 
 Route::get('pessoas/{nome}/{idade?}', function ($nome, $idade = false) { 
   return "Nome: $nome, Idade: $idade" ; 
 });
+
+- {{route('produtos.edit', $produto->id)}} = Preciso ter um alias na rota criado para utilizar dessa forma
+- produtos/{{$produto->id}} = Não preciso ter um alias criado
+
+- Ao chamar as view, eu posso usar com "/" ou com "."
+
+================== BLADE ===============
+
+Para utilizar a estrutura blade, é so adicionar .blade
+
+{{}} = intercessao
+
+
+=========== PAGINAÇÃO =============
+
+Obs: exibe com paginação por padrao 15 registro por pagina
+
+$produtos = Produto::paginate(); //exibe com paginação
+{{$produtos->links()}} = adicionar na view
+
+
+================== COMANDOS DE SELECT ===============
+
+Metodos nativos do laravel que montam pra vc a estrutura inteira
+
+$produtos = Produto::all(); //exibe todos
+
+============== COMANDOS VIA TERMINAL ==================
+
+- acessar o laradock
+- docker-compose exec --user=laradock workspace  bash
+
+- Geracao de controler:
+  - php artisan make:controller "nome do controller"Controller (primeira letra sempre maiscula)
+
+- Geracao de Model:
+  - php artisan make:model "nome do model" (primeira letra sempre maiscula)
+
+
